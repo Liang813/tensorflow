@@ -32,7 +32,7 @@ from __future__ import print_function
 
 import os.path
 import time
-
+import traceback
 import numpy
 import tensorflow as tf
 
@@ -150,8 +150,10 @@ def run_training():
 
 
 def main(_):
-  run_training()
-
+  try:
+    run_training()
+  except Exception as e:
+    traceback.print_exc(file=open('/script/tensorflow3168-buggy.txt','w+'))
 
 if __name__ == '__main__':
   tf.app.run()
