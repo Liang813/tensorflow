@@ -153,7 +153,7 @@ def main(_):
   try:
     run_training()
   except Exception as e:
-    traceback.print_exc(file=open('/script/tensorflow3168-buggy.txt','w+'))
+    traceback.print_exc()
 
 if __name__ == '__main__':
   tf.app.run()
